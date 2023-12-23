@@ -1,2 +1,2 @@
-pytest=7.4.3
 selene>=2.0.b4
+pytest~=7.4.3
