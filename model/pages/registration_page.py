@@ -1,3 +1,5 @@
+import os
+
 from selene import have, command
 from selene import browser
 
@@ -41,6 +43,9 @@ class RegistrationPage:
     def select_hobbies(self, value):
         browser.element('#hobbiesWrapper').element(f'//*[text()=("{value}")]').click()
 
+    def select_picture(self, value):
+        browser.element('#uploadPicture').send_keys(os.path.abspath(value))
+
     def fill_state(self, name):
         self.state.perform(command.js.scroll_into_view)
         self.state.click()
@@ -54,8 +59,14 @@ class RegistrationPage:
             have.exact_text(name)
         ).click()
 
-    def should_registered_user_with(self, full_name, email, gender, phone, birthday, subjects, hobbies, img_name,
-                                    current_address, state_and_city):
+    def fill_curent_address(self, value):
+        browser.element('#currentAddress').type(value)
+
+    def submit_form(self):
+        browser.all('#submit').first().submit()
+
+    def should_have_registered(self, full_name, email, gender, phone, birthday, subjects, hobbies, img_name,
+                               current_address, state_and_city):
         browser.element('.table').all('td').even.should(
             have.exact_texts(
                 full_name,
