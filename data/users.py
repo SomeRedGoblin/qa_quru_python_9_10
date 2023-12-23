@@ -2,9 +2,12 @@ import dataclasses
 from datetime import datetime
 from enum import Enum
 
+Hobbies = Enum("Hobbies", 'Sports Reading Music')
+
 
 @dataclasses.dataclass
 class User:
+    full_name: str
     first_name: str
     last_name: str
     email: str
@@ -12,20 +15,14 @@ class User:
     mobile: int
     birthday: datetime.date
     subjects: list
-    # hobbies: Hobbies()
-    hobbies: list
-    img_name: str
+    hobbies: list[Hobbies]
+    picture: str
     current_address: str
     state: str
     city: str
 
 
-# class Hobbies(Enum):
-#     Sports: str
-#     Reading: str
-#     Music: str
-
-basic_user = User(first_name='John', last_name='Week', email='john.week@example.com', gender='Male',
-                  mobile=9123456789, birthday='04 May 2000', subjects=['Maths'],
-                  hobbies=['Sports, Music'],
-                  img_name='test01.png', current_address='ул. Ленина 4', state='Haryana', city='Panipat')
+student = User(full_name='John Week', first_name='John', last_name='Week', email='john.week@example.com', gender='Male',
+               mobile=9123456789, birthday=datetime(2000, 5, 4), subjects=['Maths'],
+               hobbies=[Hobbies.Reading, Hobbies.Music],
+               picture='test01.png', current_address='ул. Ленина 4', state='Haryana', city='Panipat')
