@@ -1,3 +1,2 @@
 pytest=7.4.3
-allure-pytest=2.13.2
 selene>=2.0.b4
