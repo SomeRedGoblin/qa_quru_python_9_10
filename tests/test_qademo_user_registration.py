@@ -18,7 +18,7 @@ def test_complete_todo():
     registration_page.select_subjects('Math')
     registration_page.select_hobbies('Sports')
     registration_page.select_hobbies('Music')
-    registration_page.select_picture('resources/test01.png')
+    registration_page.select_picture('test01.png')
     registration_page.fill_curent_address('ул. Ленина 4')
     registration_page.fill_state('Haryana')
     registration_page.fill_city('Panipat')

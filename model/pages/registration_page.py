@@ -44,7 +44,7 @@ class RegistrationPage:
         browser.element('#hobbiesWrapper').element(f'//*[text()=("{value}")]').click()
 
     def select_picture(self, value):
-        browser.element('#uploadPicture').send_keys(os.path.abspath(value))
+        browser.element('#uploadPicture').send_keys(os.path.abspath(f'resources/{value}'))
 
     def fill_state(self, name):
         self.state.perform(command.js.scroll_into_view)
