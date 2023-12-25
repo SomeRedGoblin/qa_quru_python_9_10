@@ -88,7 +88,6 @@ class RegistrationPage:
         self.__submit_form()
 
     def should_have_registered(self, user: User):
-
         browser.element('.table').all('td').even.should(
             have.exact_texts(
                 user.first_name + ' ' + user.last_name,
