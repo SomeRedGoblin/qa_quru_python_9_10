@@ -1,13 +1,9 @@
-from selene import browser, have, be
-import os
 from model.pages.registration_page import RegistrationPage
 
 
 def test_complete_todo():
     registration_page = RegistrationPage()
     registration_page.open()
-
-    # заполнение формы
 
     registration_page.fill_first_name('John')
     registration_page.fill_last_name('Week')
@@ -24,7 +20,6 @@ def test_complete_todo():
     registration_page.fill_city('Panipat')
     registration_page.submit_form()
 
-    # Проверка отправленных значений
     registration_page.should_have_registered(
         'John Week',
         'john.week@example.com',
