@@ -19,7 +19,6 @@ class SimpleUserRegistrationPage:
         self.email.type(user.email)
         self.current_address.type(user.current_address)
         self.permanent_address.type(user.current_address + ' ' + user.state + ' ' + user.city)
-        # self.submit.submit()
         browser.element('#submit').click()
 
     def should_have_registered(self, user: User):
