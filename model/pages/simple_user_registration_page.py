@@ -1,5 +1,4 @@
-from selene import have, command
-from selene import browser
+from selene import browser, have
 
 from data.users import User
 

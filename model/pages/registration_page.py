@@ -1,7 +1,6 @@
 import os
 
-from selene import have, command
-from selene import browser
+from selene import browser, have, command
 
 from data.users import User
 
