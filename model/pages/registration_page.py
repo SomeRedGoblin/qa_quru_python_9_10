@@ -1,7 +1,5 @@
-import os
-
 from selene import browser, have, command
-
+from data import resource
 from data.users import User
 
 
@@ -47,8 +45,7 @@ class RegistrationPage:
             browser.element('#hobbiesWrapper').element(f'//*[text()=("{value.name}")]').click()
 
     def __select_picture(self, value):
-        image_path = f'resources/{value}'
-        browser.element('#uploadPicture').send_keys(os.path.abspath(image_path))
+        browser.element('#uploadPicture').send_keys(resource.path(value))
 
     def __fill_state(self, name):
         self.state.perform(command.js.scroll_into_view)
